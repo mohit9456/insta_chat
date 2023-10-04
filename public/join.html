@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500;600&family=Mukta:wght@400;500&family=REM&family=Roboto&family=Ubuntu:wght@400;500&display=swap"
+        rel="stylesheet">
+    <title>InstaChat- Quick Chat</title>
+    <link rel="stylesheet" href="css/joinStyle.css">
+</head>
+
+<body class="joinPage">
+    <div class="joinContainer">
+        <img src="images/logo.png" alt="">
+        <h1>Insta Chat</h1>
+        <input type="text" autocomplete="off" placeholder="Enter Your name" id="joinInput">
+        <button class="btn" id="joinBtn">Join Now</button>
+
+    </div>
+</body>
+
+<script>
+    const inputvalue = document.getElementById("joinInput");
+    const joinBtn = document.getElementById('joinBtn');
+
+    inputvalue.addEventListener('keypress', (e) => {
+        if (e.key == "Enter") {
+            joinNow();
+        }
+    })
+
+    joinBtn.addEventListener('click', () => {
+        joinNow();
+    })
+
+    function joinNow() {
+        if (inputvalue.value.length != 0) {
+            let name = inputvalue.value;
+            let queryString = `?name=${JSON.stringify(name)}`;
+            window.location.href = `chat${queryString}`;
+            inputvalue.value = '';
+        }
+
+    }
+
+</script>
+
+</html>

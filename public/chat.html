@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@500;600&family=Mukta:wght@400;500&family=REM&family=Roboto&family=Ubuntu:wght@400;500&display=swap"
+      rel="stylesheet">
+    <title>InstaChat- Quick Chat</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h2>Insta Chat</h2>
+            <a href="/"><img src="images/crossLogo.jpg" alt=""></a>
+        </div>
+        <div class="chatBox"></div>
+        <div class="send">
+            <form action="#" id="send-container">
+                <input autocomplete="off" type="text" name="msgInp" id="msgInp">
+                <button id="sendBtn" class="btn" type="submit"><img src="images/sendMsg.png" alt=""></button>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="js/script.js"></script>
+
+</html>

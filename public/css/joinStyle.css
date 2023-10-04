@@ -1,0 +1,115 @@
+.joinPage{
+    background-color: rgb(44, 41, 41);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.joinContainer {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: aqua; */
+}
+
+.joinContainer img{
+    width: 5vmax;
+}
+
+.joinContainer h1{
+    color: aliceblue;
+    font-size: 2.5vmax;
+    padding: 15px;
+    font-family: 'REM', sans-serif;
+    width: 25vmax;
+    text-align: center;
+    border-bottom: 0.2vmax solid aliceblue;
+    box-sizing: border-box;
+}
+
+#joinInput{
+    width: 25vmax;
+    border: none;
+    font-size: 1.2vmax;
+    padding: 1vmax;
+    outline: none;
+    border-radius: 6px;
+    margin: 2vmax;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+    text-transform: capitalize;
+}
+
+
+.btn{
+    background-color: crimson;
+    color: white;
+    width: 25vmax;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    font-size: 1.2vmax;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: all .3s;
+    font-family: 'REM', sans-serif;
+    padding: 1vmax;
+}
+
+
+.btn:hover{
+    background-color: rgb(240, 32, 74);
+    transform: translateY(-2px);
+}
+
+@media (max-aspect-ratio : 7/10) {
+    .joinPage{
+        display: flex;
+        align-items: flex-start !important;
+        justify-content: center;
+    }
+
+    .joinContainer {
+        width: 100% !important;
+    }
+
+    .joinContainer img {
+        width: 25vw !important;
+    }
+
+    .joinContainer h1 {
+        font-size: 6vw !important;
+        padding: 3vw !important;
+        width: 55vw !important;
+        border-bottom: 0.6vw solid white !important; 
+    }
+
+    #joinInput{
+        width: 55vw !important;
+        font-size: 4.6vw !important;
+        padding: 2vw !important;
+        margin: 5vw !important;
+    }
+
+    .btn{
+        width: 55vw !important;
+        font-size: 4.6vw !important;
+        padding: 2vw !important;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
