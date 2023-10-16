@@ -12,7 +12,7 @@ const io = socketIo(server);
 app.use(express.static("public"));
 
 
-const users = [{}];
+const users = [];
 
 app.get("/", (req, res) => {
     res.sendFile(__dirname + '/public/join.html');
@@ -28,6 +28,7 @@ io.on('connection', socket => {
 
     socket.on('joined', name => {
         users[socket.id] = name;
+        io.emit("user-list", Object.values(users));
         socket.broadcast.emit("user-joined", name);
     })
 
@@ -37,8 +38,10 @@ io.on('connection', socket => {
 
 
     socket.on('disconnect', message => {
-        socket.broadcast.emit('left', users[socket.id]);
+        const userName = users[socket.id];
         delete users [socket.id]
+        io.emit("user-list", Object.values(users));
+        socket.broadcast.emit('left', userName);
     })
 })
 

@@ -20,6 +20,16 @@ const append = (message, position) => {
     }
 }
 
+socket.on('user-list', (userList) => {
+    append(`${userList} are available for chat !`, "left");
+})
+
+window.addEventListener("load", function() {
+    var scrollableDiv = document.querySelector(".chatBox");
+    scrollableDiv.scrollTop = scrollableDiv.scrollHeight;
+});
+
+
 append(`Welcome to the Chat ! ${name}`, "right");
 socket.emit('joined', name);
 
