@@ -1,8 +1,10 @@
 const express= require('express');
+const favicon = require('serve-favicon');
 const port = 8000 || process.env.PORT; 
 
 const http = require("http");
 const socketIo = require("socket.io");
+const path = require('path');
 
 const app = express();
 
@@ -11,6 +13,7 @@ const io = socketIo(server);
 
 app.use(express.static("public"));
 
+app.use(favicon(path.join(__dirname, "favicon.ico")))
 
 const users = [];
 
