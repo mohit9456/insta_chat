@@ -21,6 +21,7 @@ app.get("/", (req, res) => {
     res.sendFile(__dirname + '/public/join.html');
 })
 
+
 app.get("/chat", (req, res) => {
     let dataQueryString = req.query.name;
     let data = JSON.parse(dataQueryString);

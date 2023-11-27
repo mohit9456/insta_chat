@@ -4,6 +4,7 @@ const msgButton = document.getElementById("send-container");
 const messageContainer = document.querySelector('.chatBox');
 const audio = new Audio('tone.mp3');
 
+
 let queryString = window.location.search;
 let urlParams = new URLSearchParams(queryString);
 let dataString = urlParams.get('name');
@@ -15,6 +16,8 @@ const append = (message, position) => {
     messageElement.classList.add("msg");
     messageElement.classList.add(position);
     messageContainer.append(messageElement);
+
+    $('.chatBox').scrollTop($('.chatBox')[0].scrollHeight);
     if (position == 'left') {
         audio.play();
     }
